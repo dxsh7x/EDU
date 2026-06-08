@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EDU</title>
+<!-- Default favicon -->
+<link rel="icon" type="image/png" href="daksh.png">
+<!-- Light mode favicon -->
+<link rel="icon" type="image/png" href="black.png" media="(prefers-color-scheme: light)">
+<!-- Dark mode favicon -->
+<link rel="icon" type="image/png" href="white.png" media="(prefers-color-scheme: dark)">
+</head>
+
+>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+font-family:Segoe UI,Arial,sans-serif;
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
+#loader{
+position:fixed;inset:0;background:#000;
+display:flex;align-items:center;justify-content:center;
+font-size:4rem;font-weight:900;color:#00ff26;
+z-index:9999;
+animation:pulse 1s infinite;
+}
+@keyframes pulse{50%{opacity:.0}}
+
+#bg{
+position:fixed;inset:0;z-index:-2;
+background:
+radial-gradient(circle at 20% 20%, rgba(0, 255, 026,0.15), transparent 25%),
+radial-gradient(circle at 80% 80%, rgba(0, 255, 026,.12), transparent 25%);
+animation:bgmove 10s infinite alternate;
+}
+@keyframes bgmove{
+from{transform:scale(1)}
+to{transform:scale(1.2)}
+}
+
+.nav{
+position:fixed;
+left:12px;top:12%;
+transform:translateY(-50%);
+background:rgba(255,255,255,.06);
+backdrop-filter:blur(12px);
+padding:15px;
+border-radius:20px;
+z-index:50;
+}
+.nav a{
+display:block;
+color:#00ff26;
+text-decoration:none;
+margin:15px 0;
+}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+perspective:1200px;
+}
+.hero h1{
+font-size:min(18vw,140px);
+color:#00ff26;
+text-shadow:0 0 0px #00ff26;
+animation:spin 8s linear infinite;
+}
+<!-- @keyframes spin{ -->
+100%{transform:rotateX(360deg) rotateY(360deg) rotateZ(360deg)}
+} -->
+
+.clock{
+margin-top:15px;
+font-size:1.3rem;
+color:#ccc;
+}
+
+.section{
+padding:80px 5%;
+}
+
+.title{
+text-align:center;
+font-size:3rem;
+margin-bottom:40px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(12px);
+border:1px solid rgba(0, 255, 026, 0.2);
+padding:25px;
+border-radius:25px;
+transition:.5s;
+transform-style:preserve-3d;
+}
+.card:hover{
+transform:rotateX(8deg) rotateY(-8deg) scale(1.05);
+box-shadow:0 0 35px rgba(0, 255, 026, 0.4);
+}
+
+.btn{
+display:inline-block;
+margin-top:15px;
+padding:12px 20px;
+background:#00ff26;
+color:black;
+text-decoration:none;
+border-radius:12px;
+font-weight:bold;
+}
+
+.search{
+display:block;
+width:min(700px,90%);
+margin:0 auto 30px;
+padding:15px;
+border-radius:15px;
+border:none;
+font-size:1rem;
+}
+
+footer{
+padding:60px;
+text-align:center;
+background:#0a0a0a;
+border-top:1px solid #222222;
+}
+
+.reveal{
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+}
+.reveal.show{
+opacity:1;
+transform:none;
+}
+</style>
+</head>
+<body>
+
+<!--<div id="loader">DAKSH</div>-->
+<div id="bg"></div>
+
+<div class="nav">
+<a href="#home">Home</a>
+<a href="#platforms">Platforms</a>
+<a href="#about">About</a>
+</div>
+
+<!--<section class="hero" id="home">
+<h1>DAKSH</h1>
+<div class="clock" id="clock"></div>
+</section>-->
+
+<section class="hero" id="home">
+<h1><img src="daksh.png "
+style="width: 1000px; height: auto; position: middle; top: 100px;size: 100px; " /></a>
+</h1>
+
+<div class="clock" id="clock"></div>
+</section>
+
+<section class="section reveal" id="platforms">
+<h2 class="title">Platforms</h2>
+
+<input class="search" id="search" placeholder="Search platform...">
+
+<div class="grid" id="grid">
+
+<div class="card">
+<h3>Physics Wallah</h3>
+<p>Courses, notes, tests and preparation.</p>
+<a class="btn" href="https://www.pw.live" target="_blank">Open</a>
+</div>
+
+<div class="card">
+<h3>Teachmint</h3>
+<p>Digital classroom platform.</p>
+<a class="btn" href="https://drive.google.com/drive/folders/18h08O5NRBtyz7UeFWaDaky9dbIzxbbje?usp=drive_link" target="_blank">Open</a>
+</div>
+
+<div class="card">
+<h3>Unacademy</h3>
+<p>Learning for competitive exams.</p>
+<a class="btn" href="https://unacademy.com" target="_blank">Open</a>
+</div>
+
+<div class="card">
+<h3>E-Career Point</h3>
+<p>Career and exam preparation.</p>
+<a class="btn" href="https://www.ecareerpoint.com" target="_blank">Open</a>
+</div>
+
+</div>
+</section>
+
+<section class="section reveal" id="about">
+<h2 class="title">About</h2>
+<div class="card">
+<h3>Owner: Daksh</h3>
+<p>
+Hello! I'm a passionate and dedicated professional who enjoys creating meaningful digital experiences and solving real-world problems through technology and creativity. I am constantly learning, improving my skills, and exploring new opportunities to grow both personally and professionally.
+My portfolio showcases the projects, skills, and experiences that reflect my journey and commitment to excellence. I believe in combining innovation, attention to detail, and a user-focused approach to deliver work that creates value and leaves a lasting impact.
+Whether I'm developing applications, designing solutions, or collaborating on exciting projects, my goal is to build things that make a difference. Thank you for visiting, and I look forward to connecting with you.
+</p>
+</div>
+</section>
+<footer>
+<h2>Contact me</h2>
+<p>dxshonly@gmail.com</p>
+</footer>
+
+<script>
+setTimeout(()=>{
+document.getElementById('loader').style.display='none';
+},2500);
+
+function updateClock(){
+document.getElementById('clock').innerHTML =
+new Date().toLocaleString();
+}
+setInterval(updateClock,1000);
+updateClock();
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting)e.target.classList.add('show');
+});
+});
+document.querySelectorAll('.reveal').forEach(x=>observer.observe(x));
+
+document.getElementById('search').addEventListener('input',e=>{
+let v=e.target.value.toLowerCase();
+document.querySelectorAll('.card').forEach(c=>{
+c.style.display=c.innerText.toLowerCase().includes(v)?'block':'none';
+});
+});
+</script>
+</body>
+</html>
